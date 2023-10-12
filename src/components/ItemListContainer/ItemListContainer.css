@@ -1,0 +1,18 @@
+.carousel-control-prev span,
+.carousel-control-next span{
+    color: #d560a0;
+    text-decoration: none;
+    font-size: 45px;
+}
+
+.carousel-control-prev span{
+    margin-right: 40px;
+}
+.carousel-control-next span{
+    margin-left: 40px;
+}
+
+
+.carousel-indicators button{
+    color: #0A0A0A;
+}

@@ -1,0 +1,32 @@
+/* -------- CartWidget -------- */
+
+nav .icons {
+    display: flex;
+    align-items:end;
+    position: relative;
+}
+
+.icons a {
+    position: relative;
+}
+
+.icons i {
+    padding: 7px;
+    color: #0A0A0A;
+    font-size: 2em;
+}
+
+.icons span {
+    color: #0A0A0A;
+    border-radius: 50%;
+    background-color: #d560a0;
+    padding: 2px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
