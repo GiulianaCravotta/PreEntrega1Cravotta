@@ -23,7 +23,7 @@ function ItemDetail({ item }) {
           <h2 className="card-title">{item.nombre}</h2>
           <p className="card-text">Cantidad: {item.stock}</p>
           <p className="card-text">${item.precio}</p>
-          {goToCart ? <Link to='/cart' className='btn' >Terminar compra</Link> : <ItemCount stock={10} initial={0} onAdd={onAdd} />}
+          {goToCart ? <Link to='/cart' className='btn' >Terminar compra</Link> : <ItemCount stock={item.stock} initial={0} onAdd={onAdd} />}
         </div>
       </div>
     </div>

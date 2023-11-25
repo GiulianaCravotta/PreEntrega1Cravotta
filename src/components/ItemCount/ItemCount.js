@@ -4,12 +4,15 @@ import './ItemCount.css';
 
 const ItemCount = ({ initial, stock, onAdd }) => {
 	const [count, setCount] = useState(parseInt(initial));
+
 	const decrease = () => {
 		setCount(count - 1);
 	};
 
 	const increase = () => {
-		setCount(count + 1);
+		if (count < stock) {
+			setCount(count + 1);
+		}
 	};
 
 	useEffect(() => {
@@ -25,12 +28,11 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 			<button disabled={count >= stock} onClick={increase} className="operacion">
 				+
 			</button>
-			
+
 			<div>
-				<button disabled={stock <= 0} onClick={() => onAdd(count)} className="btn operacion">
+				<button disabled={count === stock || stock <= 0} onClick={() => onAdd(count)} className="btn operacion">
 					Agregar al carrito
 				</button>
-
 			</div>
 		</div>
 	);
