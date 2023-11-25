@@ -1,0 +1,72 @@
+.EmptyCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CartMessage {
+    margin: 80px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #d560a0;
+    border: 1px solid #d560a0;
+    padding: 10px;
+    border-radius: 5px;
+    width: 20%;
+    filter: brightness(0.5) sepia(1) hue-rotate(-70deg) saturate(5);
+}
+
+.CartMessage::before {
+    content: url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBmaWxsPSIjM2Q5Y2NjIj48cGF0aCBkPSJNMjU2IDQwYzExOC42MjEgMCAyMTYgOTYuMDc1IDIxNiAyMTYgMCAxMTkuMjkxLTk2LjYxIDIxNi0yMTYgMjE2LTExOS4yNDQgMC0yMTYtOTYuNTYyLTIxNi0yMTYgMC0xMTkuMjAzIDk2LjYwMi0yMTYgMjE2LTIxNm0wLTMyQzExOS4wNDMgOCA4IDExOS4wODMgOCAyNTZjMCAxMzYuOTk3IDExMS4wNDMgMjQ4IDI0OCAyNDhzMjQ4LTExMS4wMDMgMjQ4LTI0OEM1MDQgMTE5LjA4MyAzOTIuOTU3IDggMjU2IDh6bS0zNiAzNDRoMTJWMjMyaC0xMmMtNi42MjcgMC0xMi01LjM3My0xMi0xMnYtOGMwLTYuNjI3IDUuMzczLTEyIDEyLTEyaDQ4YzYuNjI3IDAgMTIgNS4zNzMgMTIgMTJ2MTQwaDEyYzYuNjI3IDAgMTIgNS4zNzMgMTIgMTJ2OGMwIDYuNjI3LTUuMzczIDEyLTEyIDEyaC03MmMtNi42MjcgMC0xMi01LjM3My0xMi0xMnYtOGMwLTYuNjI3IDUuMzczLTEyIDEyLTEyem0zNi0yNDBjLTE3LjY3MyAwLTMyIDE0LjMyNy0zMiAzMnMxNC4zMjcgMzIgMzIgMzIgMzItMTQuMzI3IDMyLTMyLTE0LjMyNy0zMi0zMi0zMnoiLz48L3N2Zz4=);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.btnCart{
+    margin: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    color: #d560a0;
+    border: 1px solid #d560a0;
+    padding: 10px;
+    filter: brightness(0.5) sepia(1) hue-rotate(-70deg) saturate(5);
+    border-radius: 5px;
+    background-color: transparent;
+    width: 40%;
+}
+
+.btnCart:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.cartContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 20px;
+}
+
+
+.cartItems {
+    flex: 1;
+
+}
+
+
+.cartCheckout {
+    flex: 0 0 30%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    border-radius: 5px;
+}
+
+.cartCheckout p {
+    margin-bottom: 10px;
+    font-size: 20px;
+}

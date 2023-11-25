@@ -6,6 +6,11 @@ nav .icons {
     position: relative;
 }
 
+.icons button{
+    border: 0;
+    background-color: transparent;
+}
+
 .icons a {
     position: relative;
 }

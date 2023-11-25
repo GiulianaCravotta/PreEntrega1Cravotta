@@ -1,16 +1,22 @@
 import './CartWidget.css';
+import { useCartContext } from '../../Context/CartContext';
+import { Link } from "react-router-dom";
+
 
 function CartWidget() {
-    const contador = 0;
+    const { totalProducts, cart } = useCartContext();
+    const itemCount = totalProducts() || 0;
     return (
-        <div className="icons">
-            <a href="#">
-                <i className="material-symbols-outlined">
-                    shopping_bag
-                </i>
-                <span className="contador-item">{contador}</span>
-            </a>
-        </div>
+        <Link to='/cart'>
+            <div className="icons">
+                <button>
+                    <i className="material-symbols-outlined">
+                        shopping_bag
+                    </i>
+                    <span className="contador-item">{itemCount}</span>
+                </button>
+            </div>
+        </Link>
     )
 }
 export default CartWidget;
