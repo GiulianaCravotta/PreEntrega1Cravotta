@@ -12,23 +12,24 @@ import {
 } from 'firebase/firestore';
 
 const Checkout = () => {
-  const { cart, totalPrice, clearCart } = useCartContext();
+  const { cart, precioTotal, vaciarCart } = useCartContext();
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [telefono, setTelefono] = useState('');
   const [email, setEmail] = useState('');
   const [emailConfirmacion, setEmailConfirmacion] = useState('');
-  const [error, setError] = useState('');
   const [ordenId, setOrdenId] = useState('');
+  const [error, setError] = useState('');
+
 
   const validateForm = () => {
     if (!nombre || !apellido || !telefono || !email || !emailConfirmacion) {
-      setError('Por favor completa todos los campos');
+      setError('Por favor, completa todos los campos requeridos');
       return false;
     }
 
     if (email !== emailConfirmacion) {
-      setError('Los campos de email no coinciden');
+      setError('Los campos de correo electrónico no coinciden');
       return false;
     }
 
@@ -44,8 +45,8 @@ const Checkout = () => {
     }
 
     try {
-      const total = totalPrice();
-      console.log('Total Price:', total);
+      const total = precioTotal();
+      console.log('Total:', total);
 
       const orden = {
         items: cart.map((producto) => ({
@@ -79,7 +80,7 @@ const Checkout = () => {
       const ordenDocRef = await addDoc(collection(db, 'orders'), orden);
 
       setOrdenId(ordenDocRef.id);
-      clearCart();
+      vaciarCart();
     } catch (error) {
       console.error('Error:', error);
       setError('Error en el proceso de compra');
@@ -131,7 +132,7 @@ const Checkout = () => {
             />
 
             <input
-              placeholder="Email Confirmation"
+              placeholder="Repetir Email"
               className="input-checkout"
               type="email"
               value={emailConfirmacion}
@@ -156,7 +157,7 @@ const Checkout = () => {
             <br />
             <div>
               <Link to="/">
-                <button className="btn-checkout">Volver al Home</button>
+                <button className="btn-checkout">Ver más Productos</button>
               </Link>
             </div>
           </div>

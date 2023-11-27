@@ -14,28 +14,28 @@ const CartProvider = ({ children }) => {
         localStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
 
-    const addProduct = (item, cantidad) => {
+    const agregarProducto = (producto, cantidad) => {
         setCart((prevCart) => {
-            if (prevCart.some((producto) => producto.id === item.id)) {
-                return prevCart.map((producto) =>
-                    producto.id === item.id
-                        ? { ...producto, cantidad: producto.cantidad + cantidad }
-                        : producto
+            if (prevCart.some((item) => item.id === producto.id)) {
+                return prevCart.map((item) =>
+                    item.id === producto.id
+                        ? { ...item, cantidad: item.cantidad + cantidad }
+                        : item
                 );
             } else {
-                return [...prevCart, { ...item, cantidad }];
+                return [...prevCart, { ...producto, cantidad }];
             }
         });
     };
 
-    const totalPrice = () => {
-        return cart.reduce((prev, product) => prev + product.cantidad * product.precio, 0);
+    const precioTotal = () => {
+        return cart.reduce((prev, producto) => prev + producto.cantidad * producto.precio, 0);
     };
 
-    const totalProducts = () =>
+    const totalProductos = () =>
         cart.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);
 
-    const clearCart = () => setCart([]);
+    const vaciarCart = () => setCart([]);
 
     const isInCart = (id) => cart.some((producto) => producto.id === id);
 
@@ -43,7 +43,7 @@ const CartProvider = ({ children }) => {
 
     return (
         <CartContext.Provider
-            value={{cart,clearCart,isInCart,removeProduct,addProduct,totalPrice,totalProducts}}>
+            value={{cart,vaciarCart,isInCart,removeProduct,agregarProducto,precioTotal,totalProductos}}>
             {children}
         </CartContext.Provider>
     );

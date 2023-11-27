@@ -5,7 +5,7 @@ import './Cart.css'
 import CartItem from "../CartItem/CartItem"
 
 const Cart = () => {
-    const { cart, totalPrice } = useCartContext()
+    const { cart, precioTotal } = useCartContext()
     if (cart.length === 0) {
         return (
             <>
@@ -21,12 +21,12 @@ const Cart = () => {
     return (
         <div className="cartContainer">
             <div className="cartItems">
-                {cart.map((product) => (
-                    <CartItem key={product.id} product={product} />
+                {cart.map((producto) => (
+                    <CartItem key={producto.id} product={producto} />
                 ))}
             </div>
             <div className="cartCheckout">
-                <p><strong>Total:</strong> $ {totalPrice()}</p>
+                <p><strong>Total:</strong> $ {precioTotal()}</p>
                 <Link to="/checkout">
                     {' '}
                     <button className="btnCart">Checkout</button>

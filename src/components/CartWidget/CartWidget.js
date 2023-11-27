@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 
 function CartWidget() {
-    const { totalProducts, cart } = useCartContext();
-    const itemCount = totalProducts() || 0;
+    const { totalProductos} = useCartContext();
+    const itemCount = totalProductos() || 0;
     return (
         <Link to='/cart'>
             <div className="icons">

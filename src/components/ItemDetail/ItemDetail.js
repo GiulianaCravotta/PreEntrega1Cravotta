@@ -6,11 +6,11 @@ import ItemCount from '../ItemCount/ItemCount';
 
 function ItemDetail({ item }) {
   
-  const [goToCart, setGoToCart] = useState(false);
-  const { addProduct } = useCartContext()
-  const onAdd = (cantidad) => {
-    setGoToCart(true);
-    addProduct(item, cantidad)
+  const [IrAlCarrito, setIrAlCarrito] = useState(false);
+  const { agregarProducto } = useCartContext()
+  const onAddToCart = (cantidad) => {
+    setIrAlCarrito(true);
+    agregarProducto(item, cantidad)
 
   }
   return (
@@ -23,7 +23,7 @@ function ItemDetail({ item }) {
           <h2 className="card-title">{item.nombre}</h2>
           <p className="card-text">Cantidad: {item.stock}</p>
           <p className="card-text">${item.precio}</p>
-          {goToCart ? <Link to='/cart' className='btn' >Terminar compra</Link> : <ItemCount stock={item.stock} initial={0} onAdd={onAdd} />}
+          {IrAlCarrito ? <Link to='/cart' className='btn' >Terminar compra</Link> : <ItemCount stock={item.stock} initialCount={0} onAddToCart={onAddToCart} />}
         </div>
       </div>
     </div>
